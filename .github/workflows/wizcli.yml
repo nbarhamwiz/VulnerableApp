@@ -29,5 +29,5 @@ jobs:
         WIZ_CLIENT_SECRET: ${{ secrets.WIZ_CLIENT_SECRET }}
 
     - name: Run wiz CLI directory scan
-      run: ./wizcli dir scan --path $SCAN_PATH --policy "$POLICY"
+      run: ./wizcli dir scan --path $SCAN_PATH
       
