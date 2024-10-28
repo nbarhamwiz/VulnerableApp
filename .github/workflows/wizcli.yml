@@ -29,7 +29,7 @@ jobs:
         WIZ_CLIENT_SECRET: ${{ secrets.WIZ_CLIENT_SECRET }}
 
     - name: Run wiz CLI directory scan
-      run: ./wizcli dir scan --path $SCAN_PATH --policy-hits-only --project "nick-barham-test"
+      run: ./wizcli dir scan --path $SCAN_PATH --policy-hits-only --project "486e54cb-d733-5905-922c-5842a12d11ca"
 
   wiz-cli-image-scan:
     name: 'Wiz-cli Image Scan'
