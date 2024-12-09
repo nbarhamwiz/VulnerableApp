@@ -1,13 +1,12 @@
 name: 'wiz-cli'
-on: [push]
+on: [pull_request]
 
 jobs:
-  wiz-cli-directory-scan:
+  wiz-cli-iac-scan:
     name: 'Wiz-cli IaC Scan'
     runs-on: ubuntu-latest
     env:
       SCAN_PATH: "." # Set the relative path in the repo to scan
-      POLICY: "Default IaC policy" # Set the desired Wiz CLI policy to use
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
@@ -28,5 +27,5 @@ jobs:
         WIZ_CLIENT_ID: ${{ secrets.WIZ_CLIENT_ID }}
         WIZ_CLIENT_SECRET: ${{ secrets.WIZ_CLIENT_SECRET }}
 
-    - name: Run wiz CLI directory scan
-      run: ./wizcli dir scan --path . --policy-hits-only --project "nick-barham-test-project"
+    - name: Run wiz CLI IaC scan
+      run: ./wizcli dir scan --path $SCAN_PATH
