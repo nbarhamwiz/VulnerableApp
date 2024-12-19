@@ -28,7 +28,7 @@ jobs:
         WIZ_CLIENT_SECRET: ${{ secrets.WIZ_CLIENT_SECRET }}
 
     - name: Run wiz CLI IaC scan
-      run: ./wizcli dir scan --path $SCAN_PATH --project nick-barham-test-project
+      run: ./wizcli dir scan --path $SCAN_PATH --project 486e54cb-d733-5905-922c-5842a12d11ca
 
     - name: Run wiz CLI IaC scan
-      run: ./wizcli iac scan --path $SCAN_PATH --project nick-barham-test-project
+      run: ./wizcli iac scan --path $SCAN_PATH --project 486e54cb-d733-5905-922c-5842a12d11ca
